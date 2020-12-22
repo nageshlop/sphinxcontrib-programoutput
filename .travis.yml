@@ -1,5 +1,8 @@
 group: travis_latest
 language: python
+arch:
+  - amd64
+  - ppc64le
 group: travis_latest
 git:
   depth: 1
@@ -11,17 +14,12 @@ python:
   - 3.8
   - pypy
   - pypy3
-# ppc64le support code
-  - 2.7
-    arch: ppc64le
-  - 3.5
-    arch: ppc64le
-  - 3.6
-    arch: ppc64le
-  - 3.7
-    arch: ppc64le
-  - 3.8
-    arch: ppc64le
+jobs:
+  exclude:
+    - pypy
+      arch: ppc64le
+    - pypy3
+      arch: ppc64le
 env:
   global:
     - PYTHONWARNINGS="ignore:'U' mode is deprecated:DeprecationWarning::"
