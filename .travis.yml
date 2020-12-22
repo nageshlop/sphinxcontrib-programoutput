@@ -16,9 +16,9 @@ python:
   - pypy3
 jobs:
   exclude:
-    - pypy
+    - python: pypy
       arch: ppc64le
-    - pypy3
+    - python: pypy3
       arch: ppc64le
 env:
   global:
